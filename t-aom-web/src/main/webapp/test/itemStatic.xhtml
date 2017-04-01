@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "" "">
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:w="http://www.apusic.com/jsf/widget"
+	xmlns:layout="http://www.apusic.com/jsf/layout"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ajax="http://www.apusic.com/jsf/ajax" renderKitId="AJAX">
+	<w:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</w:head>
+	<w:page title="Insert title here">
+		<w:form style="margin:20px auto 20px 20px">
+			<w:itemSelector id="itemSelector" height="200">
+				<f:selectItem itemLabel="1广东" itemValue="1" />
+				<f:selectItem itemLabel="2黑龙江" itemValue="2" />
+				<f:selectItem itemLabel="3北京" itemValue="3" />
+				<f:selectItem itemLabel="4湖北" itemValue="4" />
+				<f:selectItem itemLabel="5湖南" itemValue="5" />
+				<f:selectItem itemLabel="6山西" itemValue="6" />
+				<f:selectItem itemLabel="7山东" itemValue="7" />
+				<f:selectItem itemLabel="8海南" itemValue="8" />
+				<f:selectItem itemLabel="9新疆" itemValue="9" />
+				<f:selectItem itemLabel="10青海" itemValue="10" />
+				<f:selectItem itemLabel="11云南" itemValue="11" />
+				<f:selectItem itemLabel="12上海" itemValue="12" />
+			</w:itemSelector>
+			<br />
+			<w:button id="showResult" label="查看选择的结果" />
+			<w:button id="changeValue" label="将值改为[2,3,4]" />
+		</w:form>
+	</w:page>
+</f:view>

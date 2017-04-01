@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "" "">
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:w="http://www.apusic.com/jsf/widget" xmlns:layout="http://www.apusic.com/jsf/layout"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:ajax="http://www.apusic.com/jsf/ajax"
+	renderKitId="AJAX">
+	<w:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="css/login2_css.css"/>
+		 <script type="text/javascript" src="js/login.js"></script>
+		 <script type="text/javascript">
+		 	  var frameLen = window.top.frames.length;
+		 	  //alert("frameLen="+frameLen);
+		  	   if(frameLen > 1){
+		  	   		//获取提交路径
+					var temp = window.location.pathname;
+					//截取工程路径名
+					path = temp.substring(0 ,temp.indexOf("/" , 2));
+					//alert("path="+path);
+		  	   		window.top.location.href = path+'/login2.faces';//../login.faces
+		  	   }
+		  </script>
+		<style type="text/css">
+			<!--
+			body {
+				margin-left: 0px;
+				margin-top: 0px;
+				margin-right: 0px;
+				margin-bottom: 0px;
+				overflow:hidden;
+			}
+			.STYLE3 {color: #528311; font-size: 12px; }
+			.STYLE4 {
+				color: #42870a;
+				font-size: 12px;
+			}
+			-->
+			</style>
+	</w:head>
+	 <f:loadBundle basename="LocalStrings" var="messages"/>
+	<w:page onload="" title="#{messages['login_page_title']}" style="background-repeat: no-repeat;background-color: #9CDCF9;background-position: 0px 0px;">
+		<w:form id="loginForm" ><!--  enctype="multipart/form-data" -->
+			<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+			  <tr>
+			    <td bgcolor="#e5f6cf">&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td height="608" background="images/login2/login_03.gif"><table width="862" border="0" align="center" cellpadding="0" cellspacing="0">
+			      <tr>
+			        <td height="266" background="images/login2/login_04.gif">&nbsp;</td>
+			      </tr>
+			      <tr>
+			        <td height="95">
+			          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+				          <tr>
+				            <td width="424" height="95" background="images/login2/login_06.gif">&nbsp;</td>
+				            <td width="183" background="images/login2/login_07.gif">
+					            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+					              <tr>
+					                <td width="21%" height="30"><div align="center"><span class="STYLE3">#{messages['login_name_title']}</span></div></td>
+					                <td width="79%" height="30">
+					                	<w:textField id="userName"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;" required="true" requiredMessage="#{console.login2Bean.userNameRMessage}"></w:textField><!-- 登陆名称不能为空 -->
+					                </td>
+					              </tr>
+					              <tr>
+					                <td height="30"><div align="center"><span class="STYLE3">#{messages['login_password_title']}</span></div></td>
+					                <td height="30">
+					                	<w:textField id="password" inputType="password" style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;"  required="true" requiredMessage="#{console.login2Bean.passwordRMessage}"/>
+					                </td>
+					              </tr>
+					             <!-- 此处增加验证码，登陆页面会变形，由于背景图片高度固定造成 -->
+					             <tr>
+					                <td height="30"><div align="center"><span class="STYLE3">#{messages['login_verifycode_title']}</span></div></td>
+					                <td height="30">
+					                	<TABLE>
+									  		<tr>
+									  			<td>
+									  				<w:textField id="authCode" value="#{console.login2Bean.authCode}" styleClass="textStyle" size="4" style="width: 55px;" required="true" requiredMessage="#{console.login2Bean.verifyCodeRMessage}"></w:textField>
+									  			</td>
+									  			<td>
+									  				<w:drawImage id="codeImage" binding="#{console.login2Bean.codeImage}" draw="#{console.login2Bean.drawVerifyCode.draw}"  width="#{console.login2Bean.drawVerifyCode.width}" height="#{console.login2Bean.drawVerifyCode.height}"  inline="true" alt="#{messages['login_verifycode_title']}" title="#{messages['login_verifyCode_title']}" style="cursor:pointer;" >
+									  					<ajax:action event="onclick" action="#{console.login2Bean.changeVerifyCode}" immediate="true"></ajax:action>
+													</w:drawImage>
+									  				<f:verbatim />
+									  			</td>
+									  		</tr>
+									  	</TABLE>
+					                </td>
+					              </tr>
+					             
+					              <tr>
+					                <td height="30">&nbsp;</td>
+					                <td height="30"><img src="images/login2/dl.gif" width="81" height="22" border="0" usemap="#Map"/></td>
+					              </tr>
+					               <tr><!--  错误消息-->
+						              <td height="5" colspan="2" style="color:red;">&nbsp;<div id="errorMessage"><h:messages /></div></td>
+						          </tr>
+					            </table>
+					         </td>
+				            <td width="255" background="images/login2/login_08.gif">&nbsp;</td>
+				          </tr>
+				        </table>
+			        </td>
+			      </tr>
+			      <tr>
+			        <td height="247" valign="top" background="images/login2/login_09.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			          <tr>
+			            <td width="22%" height="30">&nbsp;</td>
+			            <td width="56%">&nbsp;</td>
+			            <td width="22%">&nbsp;</td>
+			          </tr>
+			          <tr>
+			            <td>&nbsp;</td>
+			            <td height="30"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			              <tr>
+			                <td width="44%" height="20">&nbsp;</td>
+			                <td width="56%" class="STYLE4">版本 2014V1.0</td>
+			              </tr>
+			            </table></td>
+			            <td>&nbsp;</td>
+			          </tr>
+			        </table></td>
+			      </tr>
+			    </table></td>
+			  </tr>
+			  <tr>
+			    <td bgcolor="#a2d962">&nbsp;</td>
+			  </tr>
+			</table>
+			<ajax:submitAction id="loginAction" jsvar="loginAction" action="#{console.login2Bean.login}" />
+			<map name="Map">
+				<area shape="rect" coords="3,3,36,19" onclick="loginAction.submit();return false;" href="#"/>
+				<area shape="rect" coords="40,3,78,18" onclick="document.getElementById('loginForm').reset(); return false;" href="#"/>
+			</map>
+		</w:form>
+	</w:page>
+</f:view>

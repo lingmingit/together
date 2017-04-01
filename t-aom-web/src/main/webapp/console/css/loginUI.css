@@ -1,0 +1,62 @@
+body{
+	font-size:12px/1.75 Tahoma,Arial,sans-serif; color:#333; height:100%; background-image:url(../images/login_bg.png); background-repeat: no-repeat; background-position: center top;
+}
+
+#headWrap {
+	width:441px;position:relative;height:88px;z-index:2;text-align:left; margin-top:150px;margin-right:auto;margin-bottom:0px;margin-left:auto;
+}
+
+#logo{
+	overflow:hidden; width:430px; cursor:pointer; position:absolute; top:25px; left:0px; height:57px
+}
+
+#login {
+	overflow:hidden; width: 451px; cursor: pointer; margin:0 auto;
+}
+
+.top {
+	float:left; background-image: url(../images/login_top.png); background-repeat: no-repeat; width:441px; height:41px;
+}
+
+.top span{
+	float:left; line-height:41px; font-size: 14px; color: #FFF; font-family: "宋体"; margin-left:45px; font-weight:bolder;
+}
+
+.login_label {
+	float:left; background-image: url(../images/login_label.png); background-repeat: no-repeat; width:106px; height:41px; margin-top:8px; font-weight:bolder;
+}
+
+.login_label span{
+	line-height:41px; font-size: 14px; color: #000; font-family: "宋体"; margin-left:45px; text-align:right; margin-top:8px;
+}
+
+.login_input_label{
+	float:left; background-image: url(../images/login_input.png); background-repeat: no-repeat; width:335px; height:41px; margin-top:8px;
+}
+
+.login_input_field {
+	height: 39px; width: 315px; padding: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 10px;font-size:18px; border-top-width:0px; border-right-width:0px; border-bottom-width:0px; border-left-width: 0px; border-top-style:solid;
+	border-right-style: solid; border-bottom-style: solid; border-left-style: solid; background:transparent; line-height:39px; color: #999;
+}
+
+.login_auth_area {
+	float:left; background-image: url(../images/login_input.png); background-repeat: no-repeat; width:335px; height:41px; margin-top:8px;
+}
+
+.login_auth_field {
+	height: 39px; width: 230px; padding: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 10px; font-size:18px;
+	border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid;
+	border-right-style: solid; border-bottom-style: solid; border-left-style: solid; background:transparent; line-height:39px; color: #999;
+}
+
+.login_auth_image_area { float:left;margin-top:2px;margin-left:12px }
+
+.login_button_area { float:left; height: 39px; width: 441px; margin-top:8px; }
+
+.login_button_area span{ float:left; margin-right:8px; color:#FFF; font-size:14px; line-height:41px; }
+
+.login_commandLink_hidden { display:none}
+
+#tipMessage{ width:468px; height:41px;margin: 0 auto;margin-top:12px;}
+ 
+#tipMessage li{ font-size: 12px; list-style-type:disc; color:#ebebeb; font-weight:bold; white-space:nowrap; margin-left:5px; }

@@ -1,0 +1,293 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <!-- 配置父项目信息-->   
+  <parent>
+    <groupId>com.together</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>t-mvc-jetty-web</artifactId>
+  <packaging>war</packaging>
+  
+  <name>t-mvc-jetty-web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+     <together.version>1.0-SNAPSHOT</together.version>
+     <org.springframework-version>3.2.1.RELEASE</org.springframework-version>
+     <mysql-connector-java-version>5.1.24</mysql-connector-java-version>
+      <dom4j-version>1.6.1</dom4j-version>
+      <org.slf4j-version>1.7.2</org.slf4j-version>
+      <org.javassist-version>3.15.0-GA</org.javassist-version>
+      <commons-collections-version>3.2.1</commons-collections-version>
+      <org.springframework.security-version>3.1.4.RELEASE</org.springframework.security-version>
+      <org.aspectj-version>1.6.10</org.aspectj-version>
+  </properties>
+  
+  
+  <dependencies>
+	 <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+     <!--servlet 相关jar包配置-->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>3.0.1</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet.jsp</groupId>
+		<artifactId>jsp-api</artifactId>
+		<version>2.2</version>
+		<scope>provided</scope>
+	</dependency>
+    
+		 <!-- Spring 相关 jar 包 -->
+		<dependency>
+			<artifactId>spring-webmvc</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-orm</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-core</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-tx</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-aop</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-expression</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-context</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j 排除依赖包 -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<artifactId>spring-beans</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-jdbc</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-web</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		
+		<!-- 后面增加的jar -->
+		<dependency>
+			<artifactId>spring-context-support</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+            
+			<!-- Spring security -->
+		<dependency>
+			<artifactId>spring-security-core</artifactId>
+			<groupId>org.springframework.security</groupId>
+			<version>${org.springframework.security-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-security-config</artifactId>
+			<groupId>org.springframework.security</groupId>
+			<version>${org.springframework.security-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-security-web</artifactId>
+			<groupId>org.springframework.security</groupId>
+			<version>${org.springframework.security-version}</version>
+		</dependency>
+		<!-- Mysql JDBC -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-connector-java-version}</version>
+		</dependency>
+    <!-- Dom4j -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>${dom4j-version}</version>
+		</dependency>
+  <!-- Log4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<!--javassist  -->
+     <dependency>
+		<groupId>org.javassist</groupId>
+		<artifactId>javassist</artifactId>
+		<version>${org.javassist-version}</version>
+	</dependency>
+	<dependency>
+		<groupId>commons-collections</groupId>
+		<artifactId>commons-collections</artifactId>
+		<version>${commons-collections-version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.glassfish.hk2.external</groupId>
+		<artifactId>javax.inject</artifactId>
+		<version>2.1.45</version>
+	</dependency>	
+	<!-- AspectJ -->
+	<dependency>
+		<groupId>org.aspectj</groupId>
+		<artifactId>aspectjrt</artifactId>
+		<version>${org.aspectj-version}</version>
+	</dependency>
+	<!-- jackson -->
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-core-asl</artifactId>
+		<version>1.9.11</version>
+	</dependency>
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-mapper-asl</artifactId>
+		<version>1.9.11</version>
+	</dependency>	
+	<dependency>
+		<groupId>javax.transaction</groupId>
+		<artifactId>jta</artifactId>
+		<version>1.1</version>
+	</dependency>
+    <dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>      
+	<dependency>
+		<groupId>taglibs</groupId>
+		<artifactId>standard</artifactId>
+		<version>1.1.2</version>
+	</dependency>
+	
+  	<dependency>
+      <groupId>com.together</groupId>
+      <artifactId>t-common</artifactId>
+      <version>${together.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.together</groupId>
+      <artifactId>t-framework</artifactId>
+      <version>${together.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.together</groupId>
+      <artifactId>t-jpa-h-entity</artifactId>
+      <version>${together.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.together</groupId>
+      <artifactId>t-service</artifactId>
+      <version>${together.version}</version>
+    </dependency>
+  
+    
+  </dependencies>
+  <build>
+    <finalName>t-mvc-web</finalName>
+    <plugins>
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<additionalProjectnatures>
+						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+					</additionalProjectnatures>
+					<additionalBuildcommands>
+						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+					</additionalBuildcommands>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+			<plugin> 
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<configuration>
+					<mainClass>org.test.int1.Main</mainClass>
+				</configuration>
+			</plugin>
+			<!-- 配置maven jetty插件服务器相关设置 -->
+			<plugin>
+				 <!--这个配置不能 配置jndi数据源   6.1版本之前的使用方法-->
+				   <groupId>org.mortbay.jetty</groupId>
+				  <artifactId>jetty-maven-plugin</artifactId>
+				  <version>8.1.14.v20131031</version>
+				<!-- 另一种 插件方式  运行错误   6.1版本之后的使用方法
+				 <groupId>org.eclipse.jetty</groupId>  
+               	 <artifactId>jetty-maven-plugin</artifactId>  
+               	 <version>9.0.0.v20130308</version> 
+				  <dependencies>
+				  	<dependency>
+				  		<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>${mysql-connector-java-version}</version>
+				  	</dependency>
+				  	<dependency>
+						<groupId>org.mortbay.jetty</groupId>
+						<artifactId>jetty-plus</artifactId>
+						<version>7.0.0.pre5</version>
+					</dependency>
+            		<dependency>
+                    <groupId>org.eclipse.jetty</groupId>
+	                    <artifactId>jetty-deploy</artifactId>
+	                    <version>8.1.0.RC5</version>
+	                </dependency>
+            		
+				  </dependencies>-->
+				  <configuration>
+				    <scanIntervalSeconds>10</scanIntervalSeconds>
+				     <!-- <jettyXml>src/test/resources/jetty.xml</jettyXml> -->
+				    <webApp>
+				      <contextPath>/t-mvc-web</contextPath>
+				       <!--<defaultsDescriptor>src/test/resources/webdefault.xml</defaultsDescriptor> -->
+				    </webApp>
+				    <connectors>
+				       <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+				          <port>8888</port>
+				          <maxIdleTime>60000</maxIdleTime>
+				       </connector>
+				     </connectors>
+				  </configuration>
+			</plugin>
+		</plugins>
+  </build>
+</project>

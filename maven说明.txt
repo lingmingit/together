@@ -1,0 +1,11 @@
+
+工程架构：maven3.0+Spring3.2.1+JPA2.0+AOM3.2+MySQL5.0
+
+
+
+工具包：	mvn archetype:create -DgroupId=com.together.common -DartifactId=t-common
+框架基类：	mvn archetype:create -DgroupId=com.together.framework -DartifactId=t-framework
+hibernate实体类：mvn archetype:create -DgroupId=com.together.jpahentity -DartifactId=t-jpa-h-entity
+dao及service：mvn archetype:create -DgroupId=com.together.service -DartifactId=t-service
+aom-web工程：mvn archetype:create -DgroupId=com.together.aomweb  -DartifactId=t-aom-web -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+mvc-web工程：mvn archetype:create -DgroupId=com.together.mvcweb  -DartifactId=t-mvc-web -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false

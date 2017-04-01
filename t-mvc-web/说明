@@ -1,0 +1,4 @@
+
+该web 应用 使用 tomcat服务器
+Spring MVC 3.2 配置测试成功 连接地址
+http://127.0.0.1:8080/t-mvc-web/test/testIndex

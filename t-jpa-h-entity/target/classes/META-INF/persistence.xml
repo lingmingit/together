@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<!-- Jetty Server 该服务器不支持  将 该配置文件 放到 其它jar包中；tomcat 支持 -->
+	<persistence-unit name="together_mysql" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>jdbc/together_mysql</jta-data-source>  <!--该种方式测试成功 jdbc/together_mysql-->
+		<!--<non-jta-data-source>java:comp/env/jdbc/together_mysql</non-jta-data-source>该种方式测试成功  jdbc/together_mysql-->
+		<class>com.together.framework.entity.sys.User</class>
+		<class>com.together.framework.entity.sys.UserGroup</class>
+		<properties>
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="update" /><!-- create update none -->
+			<property name="hibernate.cache.use_query_cache" value="false" />
+			<property name="javax.persistence.validation.mode" value="none" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" /><!--org.hibernate.dialect.OracleDialect org.hibernate.dialect.MySQL5InnoDBDialect -->
+		</properties>
+		
+	</persistence-unit>
+</persistence>

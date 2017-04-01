@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operamasks-config xmlns="http://www.operamasks.org/IoVC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.operamasks.org/IoVC http://www.operamasks.org/schema/operamasks-3.1.xsd ">
+  <view-mapping>
+    <url-pattern>*</url-pattern>
+    <model-bean>#{~view}Bean</model-bean>
+  </view-mapping>
+  <metadata>
+  	   <!--1.第一种方式  配置需要 AOM注解 加载的 jar包，如：@ManagedBean ， 测试可以 
+	   <jar>t-framework.jar</jar> -->
+	   <!--2.第二种方式  配置需要 AOM注解 加载的目录 dir，相对路径以/WEB-INF目录下开始  
+	   <dir>com/together/framework/common/annotation/impl</dir>-->
+	    <!--3.第二种方式  配置需要 AOM注解 加载的package  第2个和第3个 都是配合第一个使用，在第一个基础上增加限制条件
+	   <package>com.together.framework.common.annotation.impl</package>-->
+	   <!-- 4.为了减少搜索范围及提供搜索效率，在第三方jar包中增加配置文件：   /META-INF/faces-config.xml  进行相关配置初始化-->
+  </metadata>
+</operamasks-config>
+

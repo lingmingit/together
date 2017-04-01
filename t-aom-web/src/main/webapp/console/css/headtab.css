@@ -1,0 +1,242 @@
+* {
+	margin: 0; padding: 0;
+}
+
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px;
+	MARGIN: 0px; COLOR: #000; PADDING-TOP: 0px; FONT-FAMILY: "微软雅黑";
+}
+
+DIV {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px;
+	MARGIN: 0px; COLOR: #000; PADDING-TOP: 0px; FONT-FAMILY: "微软雅黑";
+}
+
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px;
+	MARGIN: 0px; COLOR: #000; PADDING-TOP: 0px; FONT-FAMILY: "微软雅黑";
+}
+
+LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px;
+	MARGIN: 0px; COLOR: #000; PADDING-TOP: 0px; FONT-FAMILY: "微软雅黑";
+}
+
+A.letterOn {
+	FONT-WEIGHT: bold; COLOR: #000; TEXT-DECORATION: none
+}
+
+A.letterOn:hover {
+	FONT-WEIGHT: bold; COLOR: #000; TEXT-DECORATION: none
+}
+
+A.letterOn:visited {
+	FONT-WEIGHT: bold; COLOR: #000; TEXT-DECORATION: none
+}
+
+.HeadThemeWp {
+	overflow: hidden; height: 84px; background-position: right top;
+}
+
+.HeadWpInner {
+	 position: relative; height: 52px;
+}
+
+.HeadThemeWp,.SidebarThemeWp{
+	background-image: url(../images/top_right.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+
+.Logo {
+	left:12px; width: 300px; position: absolute; top: 4px; height: 32px;
+}
+
+.UserInfo {
+	DISPLAY: block; LEFT: 349px; WIDTH: 550px; LINE-HEIGHT: 22px; POSITION: absolute; TOP: 15px; HEIGHT: 22px;
+}
+
+.UserInfo ul li{
+	float:left; height:22px; BACKGROUD:#E9EEFC;
+}
+
+.nui-txt-title {
+	outline: 0; cursor: pointer; padding: 2px 4px 4px; +padding:3px 4px; text-decoration: none;
+	border-radius: 4px; font-size: 12px; color: #666; font-family: "微软雅黑";
+}
+
+.nui-txt-link {
+	outline: 0; cursor: pointer; padding: 2px 4px 4px; +padding:3px 4px;
+    text-decoration: none; border-radius: 4px; font-size: 12px; color: #666; font-family: "微软雅黑";
+}
+
+.nui-txt-link b{
+	background-image: url(../images/untitled1.png); background-repeat: no-repeat; background-position: center center;	
+}
+
+.nui-txt-link a:link {
+	outline: 0; cursor: pointer; padding: 2px 4px 4px; +padding:3px 4px;	text-decoration: none;
+	border-radius: 4px; font-size: 12px; color: #666; font-family: "微软雅黑";
+}
+
+.nui-txt-link:active{background:#bbb!important;color:#eee!important}
+
+.nui-txt-link:hover,.nui-txt-link-hover,.nui-txt-link:focus,.nui-txt-link-focus,.ua-ie6 .nui-addr-active,.ua-ie7 .nui-addr-active,.ua-ie8 .nui-addr-active,.nui-bg-hover{background-color:#36c;color:#fff!important}
+
+.nui-txt-link:hover b{
+	background-image: url(../images/untitled.png); background-repeat: no-repeat; background-position: center center;
+}
+	
+.oj{margin:0 4px;float:left;line-height:20px;}
+
+.ir{line-height: 20px;font-weight: bold;}
+
+.nui-ico-dArr{
+	width: 7px; height: 4px; background-image: url(../images/untitled1.png); background-repeat: no-repeat;
+}
+
+<!--tab样式-->
+.tabTitle {
+	margin-left:0px; height: 32px;
+}
+
+.tabMune {
+	width:100%; margin-top:0px; margin-left:12px; height: 32px;  
+}
+
+.tabMune  ul li {
+	float: left; width:85px; height:32px; line-height: 32px; text-align: center; font-size: 12px; font-family: "微软雅黑";
+	text-decoration: none; font-weight: bold; background-image:url(../images/cdbg.png); background-repeat: no-repeat;
+}
+
+.tabOnclick {
+	background-position: -119px -96px;
+	color: #000;
+	text-decoration: none;
+	width:85px;
+	line-height:32px;
+}
+.tabOnclick a{
+	color: #ffffff;
+	text-decoration: none;
+	width:85px;
+	line-height:32px;
+}
+.tabOnclick a:hover{
+	color: #ffffff;
+	text-decoration: none;
+	width:85px;
+	line-height:32px;
+}
+.tabOnclick a:active{
+	color: #ffffff;
+	text-decoration: none;
+	width:85px;
+	line-height:32px;
+}
+
+.singleColor {
+	background-position: -119px 0px;
+	color: #4d494a; cursor: pointer;
+    text-decoration: none;
+	width:85px;
+	height:32px;
+	line-height:32px;
+}
+
+.singleColor a {
+	float:left;	
+	background-position: -119px 0px;
+	color: #4d494a; cursor: pointer;
+	text-decoration: none;
+	width:85px;
+	height:32px;
+	line-height:32px;
+}
+
+.singleColor a:hover {
+	background-images: url(../images/cdbg.png);
+	background-repeat: no-repeat;
+	background-position: -119px -48px;
+	color: #4d494a; cursor: pointer;
+	text-decoration: none;
+	width:85px; height:32px;
+	line-height:32px;
+}
+
+.singleColor a:active {
+	background-position: -119px -96px;
+	color: #ffffff; cursor: pointer;
+	text-decoration: none;
+	width:85px; line-height:32px;
+}
+
+.tabHideLine{
+	background-color:#135aa4; font-size:1px; height:4px; width:100%;
+}
+
+.xiala1 {
+	float: left;
+}
+
+.xiala1 ul li {
+	float: left; width: 29px; background-images: url(../images/cdbg.png);
+	background-repeat: no-repeat; line-height: 32px; height: 32px;
+}
+
+.xiala1 ul li a {
+	float: left; width: 29px; background-images: url(../images/cdbg.png);
+	background-repeat: no-repeat; line-height: 32px; height: 32px;
+}
+
+.xiala1 ul li a:hover {
+	float: left; width: 29px; background-images: url(../images/cdbg.png);
+	background-repeat: no-repeat; line-height: 32px; height: 32px;
+}
+
+.xiala1 ul li a:active {
+	float: left; width: 29px; background-images: url(../images/cdbg.png);
+	background-repeat: no-repeat; line-height: 32px; height: 32px;
+}
+
+.xiala {
+	background-position: -204px -14px;
+}
+
+.xiala a {
+	background-position: -204px -14px;
+}
+
+.xiala a:hover {
+	background-position: -204px -61px;
+}
+
+.xiala a:active {
+	background-position: -204px -110px;
+}
+
+.nui-ipt,.nui-btn{
+	display:inline-block;+display:inline;vertical-align:middle;
+}
+
+.nui-ipt{
+	font-size:12px;line-height:27px;position:relative;zoom:1;height:27px; width:170px;border:1px solid #bbb;background:#fff;box-shadow:1px 1px 2px rgba(0,0,0,.1) inset;
+}
+
+.nui-ipt-input{
+	font-size:12px;padding:0;+padding:2px 0 1px;margin:0;-margin-top:1px;border:0;outline:0;background:transparent;margin-top:7px; margin-left:8px;
+}
+
+.nui-ipt-input{width:141px;}
+
+.nui-ipt-iconBtn{position:absolute;width:16px;height:16px;right:8px;top:6px;cursor:pointer;outline:0}
+
+.nui-ipt-iconBtn .nui-ico{color:#ccc;position:absolute;left:0;top:0}
+
+.nui-ipt-iconBtn .nui-ico-hover,.nui-ipt-iconBtn .nui-ico-active,.nui-ipt-iconBtn .nui-ico-focus{color:#555}
+
+.nui-ipt-iconBtn .nui-ico-dArr{left:4px;top:5px}
+
+.nui-ipt-iconBtn .nui-ico-close{left:4px;top:-2px}
+
+.nui-ipt-iconBtn{right:4px;top:3px}

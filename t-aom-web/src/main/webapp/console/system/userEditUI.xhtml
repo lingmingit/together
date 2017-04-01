@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "" "">
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:w="http://www.apusic.com/jsf/widget" xmlns:layout="http://www.apusic.com/jsf/layout"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:ajax="http://www.apusic.com/jsf/ajax" xmlns:ui="http://java.sun.com/jsf/facelets" renderKitId="AJAX">
+	<ui:composition template="../template/edit/standard_edit_template.xhtml">
+	<ui:param name="PageTitle" value="#{messages['user_edit_label']}"/>
+	<ui:param name="contextPath" value="#{console.system.userEditUIBean.contextPath}"/>
+		<ui:define name="editArea">
+			<table class="contentForm">
+				<tr>
+                	<td class="labelRight">
+                    	<span style="color:red;">*</span>#{messages['user.number']}:
+                    </td>
+                    <td class="inputLeft">
+                    	<w:textField id="number" width="#{messages['modal_double_input']}" cls="input_lost_focus" focusClass="input_get_focus"/>
+                    </td>
+                    <td class="labelRight">
+                    	<span style="color:red;">*</span>#{messages['user.password']}:
+                    </td>
+                    <td class="inputLeft">
+                    	<w:textField id="password" inputType="password" width="#{messages['modal_double_input']}" cls="input_lost_focus" focusClass="input_get_focus"/>
+                    </td>
+				</tr>
+				<tr>
+					<td class="labelRight">
+                    	&nbsp;&nbsp;#{messages['usergroup.grouproot']}:
+                    </td>
+                     <td class="inputLeft">
+                    	<w:combo id="parentKey" converter="UUIDConverter" width="#{messages['modal_double_input']}" alwaysSubmit="true" disabled="true" cls="input_lost_focus" focusClass="input_get_focus">
+							<f:selectItems id="parentNodeDispList"/>
+						</w:combo>
+                    </td>
+                    <td class="labelRight">
+                    	<span style="color:red;">*</span>#{messages['user.name']}:
+                    </td>
+                    <td class="inputLeft">
+                    	<w:textField id="name" width="#{messages['modal_double_input']}" cls="input_lost_focus" focusClass="input_get_focus"/>
+                    </td>
+				</tr>
+				<tr>
+					<td class="labelRight">
+                    	<span style="color:red;">*</span>#{messages['user.age']}:
+                    </td>
+                    <td class="inputLeft">
+                    	<w:numberField id="age" allowNegative="false" allowDecimals="false" width="#{messages['modal_double_input']}" cls="input_lost_focus" focusClass="input_get_focus"/>
+                    </td>
+                    <td class="labelRight">
+                    	<span style="color:red;">*</span>#{messages['user.sex']}:
+                    </td>
+                     <td class="inputLeft">
+                    	<w:combo id="sex" width="#{messages['modal_double_input']}" editable="false" cls="input_lost_focus" focusClass="input_get_focus">
+							<f:selectItems id="sexDispList"/>
+						</w:combo>
+                    </td>
+				</tr>
+				<tr>
+					<td class="labelRight">
+                    	&nbsp;&nbsp;#{messages['user.telephone']}:
+                    </td>
+                    <td class="inputLeft">
+                    	<w:textField id="telephone" width="#{messages['modal_double_input']}" cls="input_lost_focus" focusClass="input_get_focus"/>
+                    </td>
+                    <td class="labelRight">
+                    	<span style="color:red;">*</span>#{messages['user.mobilePhone']}:
+                    </td>
+                    <td class="inputLeft">
+                    	<w:textField id="mobilePhone" width="#{messages['modal_double_input']}" cls="input_lost_focus" focusClass="input_get_focus"/>
+                    </td>
+				</tr>
+			     <tr>
+			        <td class="labelRight">
+                    	&nbsp;&nbsp; #{messages['user.qq']}:
+                    </td>
+                    <td class="inputLeft">
+                    	<w:textField id="qq" width="#{messages['modal_double_input']}" cls="input_lost_focus" focusClass="input_get_focus"/>
+                    </td>
+					<td class="labelRight">
+                    	&nbsp;&nbsp;#{messages['user.userType']}:
+                    </td>
+                     <td class="inputLeft">
+                    	<w:combo id="userType" converter="UUIDConverter" width="#{messages['modal_double_input']}"  cls="input_lost_focus" focusClass="input_get_focus">
+							<f:selectItems id="userTypeDispList"/>
+						</w:combo>
+                    </td>
+				</tr>
+				<tr>
+                	<td class="labelRight">
+                    	&nbsp;&nbsp;#{messages['user.email']}:
+                    </td>
+                    <td class="inputLeft" colspan="3">
+                    	<w:textField id="email" width="#{messages['modal_double_maxinput']}" cls="input_lost_focus" focusClass="input_get_focus"/>
+                    </td>
+				</tr>
+				<tr>
+					<td class="labelRight">
+                    	&nbsp;&nbsp;#{messages['user.homeAddress']}:
+                    </td>
+                    <td class="inputLeft" colspan="3">
+                    	<w:textField id="homeAddress" width="#{messages['modal_double_maxinput']}" cls="input_lost_focus" focusClass="input_get_focus"/>
+                    </td>
+				</tr>
+				<tr>
+                	<td class="labelRight">
+                    	&nbsp;&nbsp;#{messages['system.description']}:
+                    </td>
+                    <td class="inputLeft" colspan="3">
+                    	<w:textArea id="description" width="#{messages['modal_double_maxinput']}" height="#{messages['modal_single_area_height']}" cls="area_lost_focus" focusClass="area_get_focus"/>
+                    </td>
+				</tr>
+			</table>
+		</ui:define>
+		<ui:define name="resultOperateArea">
+			<w:button id="btnAddNew" value="#{messages['button_addnew']}" image="#{contextPath}/console/images/btn/tbtn_addnew.gif" action="#{console.system.userEditUIBean.addNewAction}"/>
+			<w:button id="btnEdit" value="#{messages['button_modify']}" image="#{contextPath}/console/images/btn/tbtn_edit.gif" action="#{console.system.userEditUIBean.editAction}"/>
+			<w:button id="btnDelete" value="#{messages['button_delete']}" image="#{contextPath}/console/images/btn/tbtn_delete.gif" action="#{console.system.userEditUIBean.deleteAction}"/>
+			<w:button id="btnSave" value="#{messages['button_save']}" image="#{contextPath}/console/images/btn/tbtn_save.gif" action="#{console.system.userEditUIBean.saveAction}"/>
+			<w:button id="btnEnable" value="#{messages['button_enable']}" image="#{contextPath}/console/images/btn/tbtn_enable.gif" action="#{console.system.userEditUIBean.enableAction}"/>
+			<w:button id="btnDisable" value="#{messages['button_disable']}" image="#{contextPath}/console/images/btn/tbtn_disable.gif" action="#{console.system.userEditUIBean.disableAction}"/>
+			<w:button id="btnExit" value="#{messages['buttion_exit']}" image="#{contextPath}/console/images/btn/tbtn_close.gif" action="#{console.system.userEditUIBean.exitAction}"/>
+		</ui:define>
+	</ui:composition>
+</f:view>

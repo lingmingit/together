@@ -1,0 +1,23 @@
+.container { margin:0px; width:100%; overflow:hidden;}
+
+.header {
+	margin:0px; width:100%; background:url(../images/header_bg.jpg) repeat-x; height:79px;
+}
+
+.header .logo {
+	margin:0px; width:360px; float:left; height:79px;
+}
+
+.company {
+	float:left; margin-left:5px; font-size:20px; line-height:100px; font-family:"黑体";
+}
+
+.platform {
+	text-align:right;line-height:30px;margin-right:35px; margin-top:15px;
+}
+
+.welcome {
+	float:right; font-size:12px; color: #666; line-height:50px; font-family:Arial,Helvetica,sans-serif; margin-right:5px;
+}
+
+.welcome span { font-size:12px; font-weight:bold; font-family:"榛戜綋"; color: #666;}

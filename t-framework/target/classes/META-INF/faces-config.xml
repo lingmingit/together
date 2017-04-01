@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd" version="1.2">
+	<!-- 配置 非当前web项目下的  managed-bean-->
+	<managed-bean>
+	  <managed-bean-name>serviceCtrlListener</managed-bean-name>
+	  <managed-bean-class>com.together.framework.common.annotation.impl.ServiceCtrlListener</managed-bean-class>
+	  <managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+	  <managed-bean-name>drawVerifyCode</managed-bean-name>
+	  <managed-bean-class>com.together.framework.web.aom.bean.DrawVerifyCode</managed-bean-class>
+	  <managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- 配置转换器 -->
+	<converter>
+		<converter-id>UUIDConverter</converter-id>
+		<converter-class>com.together.framework.web.aom.converter.UUIDConverter</converter-class>
+	</converter>
+	<converter>
+		<converter-id>timestampConverter</converter-id>
+		<converter-class>com.together.framework.web.aom.converter.TimestampFormatConverter</converter-class>
+	</converter>
+	<converter>
+		<converter-id>pageStatusConverter</converter-id>
+		<converter-class>com.together.framework.web.aom.converter.PageStatusEnumConverter</converter-class>
+	</converter>
+	<converter>
+		<converter-id>integerConverter</converter-id>
+		<converter-class>com.together.framework.web.aom.converter.IntegerConverter</converter-class>
+	</converter>
+	<converter>
+		<converter-id>dateFormatConverter</converter-id>
+		<converter-class>com.together.framework.web.aom.converter.DateFormatConverter</converter-class>
+	</converter>
+	<converter>
+		<converter-id>currencyFormatConverter</converter-id>
+		<converter-class>com.together.framework.web.aom.converter.CurrencyFormatConverter</converter-class>
+	</converter>
+	<converter>
+		<converter-id>billStatusEnumConverter</converter-id>
+		<converter-class>com.together.framework.web.aom.converter.BillStatusEnumConverter</converter-class>
+	</converter>
+	<converter>
+		<converter-id>bigDecimalConverter</converter-id>
+		<converter-class>com.together.framework.web.aom.converter.BigDecimalConverter</converter-class>
+	</converter>
+</faces-config>

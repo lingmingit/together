@@ -1,0 +1,82 @@
+
+
+
+Entity实体 框架基类说明如下：
+	1、系统JPA实体基类 com.together.framework.entity.base.Core  【id主键】
+	2、系统基础字段核心抽象实体类 com.together.framework.entity.base.BaseCore 【创建人、创建时间、修改时间、修改时间、备注】
+	3、基础资料抽象实体类 com.together.framework.entity.AbstractDataBase 【编码、名称、简称、启用、系统】
+	4、基础资料树形或分组抽象实体类 com.together.framework.entity.AbstractTreeData 【所属层级、长编码、是否子节点】
+	5、系统用户实体类 com.together.framework.entity.sys.User【用户相关基础信息】
+	6、系统用户实体类 com.together.framework.entity.sys.UserGroup【用户分组基础信息】
+框架常量类
+	定义基础框架常量属性类com.together.framework.constants.FrameworkConstants
+
+
+前台liteBean中自动注入Service实现涉及类
+	1、定义注入注释接口类 com.together.framework.common.annotation.IServiceCtrl
+	2、自动注入Service监听器  com.together.framework.common.annotation.impl.ServiceCtrlListener
+	
+	
+辅助相关枚举基类：
+	1、枚举抽象基础接口类 com.together.framework.common.enums.base.CoreBaseEnum
+	2、枚举帮助处理类：com.together.framework.common.enums.EnumUtils
+
+定义枚举类说明：
+	1、对象SQL条件查询比较符枚举 com.together.framework.dao.enums.CompareTypeEnum
+	2、数据库类型枚举  com.together.framework.dao.enums.DatabaseEnum
+	3、SQL排序类型 升序|降序枚举 com.together.framework.dao.enums.OrderTypeEnum
+	
+
+DAO 框架基类说明如下：
+	1、 基于JPA的数据库操作核心接口    com.together.framework.dao.jpa.base.ICoreBaseDao【增删改查等】
+	       实现类 com.together.framework.dao.jpa.base.impl.CoreBaseDaoImpl 
+	2、基础资料数据库操作核心接口  com.together.framework.dao.jpa.IDataBaseDao 【启用、禁用】
+	      实现类 com.together.framework.dao.jpa.impl.DataBaseDaoImpl
+	3、树形基础资料数据库操作接口 com.together.framework.dao.jpa.ITreeDataDao 【树形相关方法】
+	     实现类com.together.framework.dao.jpa.impl.TreeDataDaoImpl
+	4、
+	DAO数据库查询辅助操作类：
+		1、查询条件的基本元素对象类 com.together.framework.dao.common.ConditionParameter
+		2、排序功能基本元素对象类  com.together.framework.dao.common.OrderParameter
+		3、基于SQL的配置参数信息类 com.together.framework.dao.common.SQLCondition
+							   
+Service 框架基类说明如下：
+	1、基于JPA的业务逻辑层操作核心接口类 com.together.framework.service.base.ICoreBaseService 【增删改查等】
+	   实现类 com.together.framework.service.base.impl.CoreBaseServiceImpl
+	2、基础资料业务层操作核心接口类 com.together.framework.service.IDataBaseService
+	  实现类 com.together.framework.service.impl.DataBaseServiceImpl
+	3、树形基础资料业务层操作核心接口类 com.together.framework.service.ITreeDataService
+	 实现类com.together.framework.service.impl.TreeDataServiceImpl
+	 
+Web 框架相关辅助类
+	1、前台页面状态枚举对象类 com.together.framework.web.enums.PageStatusEnum
+	2、Action功能名称定义枚举 com.together.framework.web.enums.ActionNameDefineEnum
+	3、基于金蝶OperaMasks中间件的工具类 com.together.framework.web.utils.OperamaskUtils 
+
+AOM LitBean 框架基类说明如下：
+	1、抽象AOM 基础核心litBean基类 接口方法 com.together.framework.web.aom.base.ICoreBaseUI
+	      实现类 com.together.framework.web.aom.base.impl.CoreBaseUIBean
+	2、编辑UI界面litBean说明
+		1、编辑界面后台核心litBean基类 接口方法 com.together.framework.web.aom.edit.ICoreEditUI
+		      实现类com.together.framework.web.aom.edit.impl.CoreEditUIBean
+		2、基础资料核心litBean基类接口  com.together.framework.web.aom.edit.IDataBaseEditUI
+		      实现类 com.together.framework.web.aom.edit.impl.DataBaseEditUIBean
+		3、 针对带树基础资料 编辑界面操作相关业务逻辑，如：用户表 com.together.framework.web.aom.edit.IDataBasetreeEditUI
+		       实现类com.together.framework.web.aom.edit.impl.DataBasetreeEditUIBean
+		4、针对树表弹出窗口，只针对树操作编辑界面，如：用户分组 com.together.framework.web.aom.edit.ITreeGroupEditUI
+		     实现类com.together.framework.web.aom.edit.impl.TreeGroupEditUIBean
+	 3、列表UI界面litBean说明
+		1、列表界面抽象核心接口接类  com.together.framework.web.aom.list.ICoreListUI
+		      实现类com.together.framework.web.aom.list.impl.CoreListUIBean
+		2、列表界面基础相关操作接口基类 com.together.framework.web.aom.list.IBaseListUI 【增删改查等】
+		     实现类   com.together.framework.web.aom.list.impl.BaseListUIBean
+		3、基础资料信息列表界面实现接口类 com.together.framework.web.aom.list.IDataBaseListUI 【启用、禁用】
+		     实现类 com.together.framework.web.aom.list.impl.DataBaseListUIBean 
+		4、树型基础资料序时薄界面接口类(左树右表，同一张表) com.together.framework.web.aom.list.ITreedataListUI
+		    实现类 com.together.framework.web.aom.list.impl.TreedataListUIBean
+		5、树型基础资料序时薄界面接口类(左树右表，两张表[分组表、基础资料表]) com.together.framework.web.aom.list.ITreeGroupListUI
+			实现类 com.together.framework.web.aom.list.impl.TreeGroupListUIBean
+	4、树形UI界面litBean说明
+		
+		
+	

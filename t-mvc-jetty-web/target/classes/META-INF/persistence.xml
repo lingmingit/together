@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<!-- Jetty Server 该服务器不支持  将 该配置文件 放到 其它jar包中；tomcat 支持 -->
+	<persistence-unit name="together_mysql" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.together.entity.User</class>
+		
+		<properties>
+			<!--配置Hibernate方言 -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" /><!--org.hibernate.dialect.OracleDialect org.hibernate.dialect.MySQL5InnoDBDialect -->
+			<!--配置数据库驱动 -->
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<!--配置数据库用户名 -->
+			<property name="hibernate.connection.username" value="root" />
+			<!--配置数据库密码 -->
+			<property name="hibernate.connection.password" value="admin" />
+			<!--配置数据库url -->
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/together?useUnicode=true&amp;characterEncoding=UTF-8" />
+			<!--设置外连接抓取树的最大深度 -->
+			<property name="hibernate.max_fetch_depth" value="3" />
+			<!-- 设置是否显示sql语句 -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="false" />
+			<!--自动输出schema创建DDL语句 -->
+			<property name="hibernate.hbm2ddl.auto" value="update" /><!-- create update none -->
+			<property name="hibernate.cache.use_query_cache" value="false" />
+			<property name="javax.persistence.validation.mode" value="none" />
+		</properties>
+	</persistence-unit>
+</persistence>

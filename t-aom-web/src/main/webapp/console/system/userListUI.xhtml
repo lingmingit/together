@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "" "">
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:w="http://www.apusic.com/jsf/widget" xmlns:layout="http://www.apusic.com/jsf/layout"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:ajax="http://www.apusic.com/jsf/ajax" xmlns:ui="http://java.sun.com/jsf/facelets" renderKitId="AJAX">
+	<ui:composition template="../template/list/standard_treeList_template.xhtml">
+	<ui:param name="contextPath" value="#{console.system.userListUIBean.contextPath}"/>
+		<ui:define name="treeOperateArea">
+			<w:button id="btnTreeAddNew" value="#{messages['button_addnew']}" image="#{contextPath}/console/images/btn/tbtn_addnew.gif" action="#{console.system.userListUIBean.treeAddNewAction}"/>
+			<w:button id="btnTreeEdit" value="#{messages['button_modify']}" image="#{contextPath}/console/images/btn/tbtn_edit.gif" action="#{console.system.userListUIBean.treeEditAction}"/>
+			<w:button id="btnTreeDelete" value="#{messages['button_delete']}" image="#{contextPath}/console/images/btn/tbtn_delete.gif" action="#{console.system.userListUIBean.treeDeleteAction}"/>
+			<w:button id="btnTreeEnable" value="#{messages['button_enable']}" image="#{contextPath}/console/images/btn/tbtn_enable.gif" action="#{console.system.userListUIBean.treeEnableAction}"/>
+			<w:button id="btnTreeDisable" value="#{messages['button_disable']}" image="#{contextPath}/console/images/btn/tbtn_disable.gif" action="#{console.system.userListUIBean.treeDisableAction}"/>
+		</ui:define>
+		<ui:define name="treeDisplayArea">
+			<w:tree id="tree" jsvar="tree" rootVisible="true" expandAll="false" binding="#{console.system.userListUIBean.tree}" value="#{console.system.userListUIBean.treeDataProvider}" autoLeaf="true"/>
+		</ui:define>
+		<ui:define name="conditionArea">
+			<table class="serachForm">
+				<tr>
+					<td class="labelRight">#{messages['user.number']}:</td>
+					<td class="inputLeft">
+						<w:textField id="number" width="#{messages['standard_search_input']}" cls="input_lost_focus" focusClass="input_get_focus"/>
+					</td>
+					<td class="labelRight">#{messages['user.name']}:</td>
+					<td class="inputLeft">
+						<w:textField id="name" width="#{messages['standard_search_input']}" cls="input_lost_focus" focusClass="input_get_focus"/>
+					</td>
+					<td class="labelRight">#{messages['module.status']}:</td>
+					<td class="inputLeft">
+						<w:checkBox id="isEnable"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="6">
+						<div class="topButtonDiv">
+							<div class="topButton">
+								<w:button id="btnReset" image="#{contextPath}/console/images/btn/tbtn_clear.gif" label="#{messages['button_reset']}" action="#{console.system.userListUIBean.resetAction}"/>
+							</div>
+							<div  class="topButton">
+								<w:button id="btnSearch" image="#{contextPath}/console/images/btn/tbtn_search.gif" label="#{messages['button_search']}" action="#{console.system.userListUIBean.searchAction}"/>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</ui:define>
+		<ui:define name="datagridListArea">
+			<!-- ${console.system.userListUIBean.dataGridHeight} -->
+			<w:dataGrid id="listDataGrid" jsvar="listDataGrid" idColumn="idColumn" rows="${console.system.userListUIBean.pageSize}" style="height:500px; width:99.5%;" selectable="true" paged="true"
+				binding="#{console.system.userListUIBean.listDataGrid}" var="record" showRowNumber="true" sync="true" singleSelect="false" loadMask="false" selectionModel="#{console.system.userListUIBean.checkbox}">
+				<ajax:action event="ondblclick" immediate="true" action="#{console.system.userListUIBean.datagrid_row_double_onclick}"/>
+				<ajax:action event="onrowselect" immediate="true" action="#{console.system.userListUIBean.datagrid_row_single_onclick}"/>
+				<w:outputColumn id="idColumn" header="id" hidden="true" value="#{record.id}"/>
+				<w:outputColumn id="rowNoColumn" width="30" align="center" clientFormatter="rowNumberFormatter" header="No."/>
+				<w:outputColumn id="groupColumn" width="80" header="#{messages['user.group']}" value="#{record.group.name}" sortable="true"/>
+				<w:outputColumn id="numberColumn" width="80" header="#{messages['user.number']}" value="#{record.numbers}" sortable="true"/>
+				<w:outputColumn id="nameColumn" width="100" header="#{messages['user.name']}" value="#{record.name}"/>
+				<w:outputColumn id="mobilePhoneColumn" align="center" width="90" header="#{messages['user.mobilePhone']}" value="#{record.mobilePhone}"/>
+				<w:outputColumn id="telephoneColumn" width="90" header="#{messages['user.telephone']}" value="#{record.telephone}"/>
+			    <w:outputColumn id="qqColumn" width="80" header="#{messages['user.qq']}" value="#{record.qq}"/>
+			    <w:outputColumn id="userTypeColumn" width="80" header="#{messages['user.userType']}" value="#{record.userType}" />
+				<w:outputColumn id="emailColumn" width="180" header="#{messages['user.email']}" value="#{record.email}"/>
+				<w:outputColumn id="homeAddressColumn" width="300" header="#{messages['user.homeAddress']}" value="#{record.homeAddress}"/>
+				<w:outputColumn id="isDeleteColumn" width="50" header="#{messages['user.isDelete']}" align="center" value="#{record.isDelete}" clientFormatter="boolean_check_Formatter"/>
+				<w:outputColumn id="isLockedColumn" width="50" header="#{messages['user.isLocked']}" align="center" value="#{record.isLocked}" clientFormatter="boolean_check_Formatter"/>
+				<w:outputColumn id="enableColumn" width="50" header="#{messages['bd_record_status']}" align="center" value="#{record.isEnable}" clientFormatter="boolean_check_Formatter"/>
+				<w:outputColumn id="systemColumn" width="50" header="#{messages['bd_record_system']}" align="center" value="#{record.isSystem}" clientFormatter="boolean_check_Formatter"/>
+				<w:outputColumn id="descriptionColumn" width="300" header="#{messages['system.description']}" value="#{record.description}"/>
+				<w:outputColumn id="creatorColumn" width="80" header="#{messages['record_creator']}" value="#{record.creator.name}"/>
+				<w:outputColumn id="createTimeColumn" width="130" header="#{messages['record_createtime']}" value="#{record.createTime}" converter="timestampConverter"/>
+				<w:outputColumn id="lastUpdateUserColumn" width="80" header="#{messages['record_modifier']}" value="#{record.modifier.name}"/>
+				<w:outputColumn id="lastUpdateTimeColumn" width="130" header="#{messages['record_modifytime']}"  value="#{record.modifyTime}" converter="timestampConverter"/>
+			</w:dataGrid>
+		</ui:define>
+		<ui:define name="resultOperateArea">
+			<w:button id="btnAddNew" value="#{messages['button_addnew']}" image="#{contextPath}/console/images/btn/tbtn_addnew.gif" action="#{console.system.userListUIBean.addNewAction}"/>
+			<w:button id="btnEdit" value="#{messages['button_modify']}" image="#{contextPath}/console/images/btn/tbtn_edit.gif" action="#{console.system.userListUIBean.editAction}"/>
+			<w:button id="btnDelete" value="#{messages['button_delete']}" image="#{contextPath}/console/images/btn/tbtn_delete.gif" action="#{console.system.userListUIBean.deleteAction}"/>
+			<w:button id="btnView" value="#{messages['button_view']}" image="#{contextPath}/console/images/btn/tbtn_view.gif" action="#{console.system.userListUIBean.viewAction}"/>
+			<w:button id="btnEnable" value="#{messages['button_enable']}" image="#{contextPath}/console/images/btn/tbtn_enable.gif" action="#{console.system.userListUIBean.enableAction}"/>
+			<w:button id="btnDisable" value="#{messages['button_disable']}" image="#{contextPath}/console/images/btn/tbtn_disable.gif" action="#{console.system.userListUIBean.disableAction}"/>
+			<w:button id="btnLocked" value="#{messages['button_locked']}" image="#{contextPath}/console/images/btn/tbtn_lock.gif" action="#{console.system.userListUIBean.lockAction}"/>
+			<w:button id="btnUnlock" value="#{messages['button_unlock']}" image="#{contextPath}/console/images/btn/tbtn_unlock.gif" action="#{console.system.userListUIBean.unlockAction}"/>
+			<w:button id="btnArchive" value="#{messages['button_archive']}" image="#{contextPath}/console/images/btn/tbtn_archive.gif" action="#{console.system.userListUIBean.archiveAction}"/>
+		</ui:define>
+	</ui:composition>
+</f:view>

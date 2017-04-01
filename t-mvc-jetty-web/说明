@@ -1,0 +1,11 @@
+
+该web 应用 使用 jetty 插件服务器
+Spring MVC 3.2 配置测试是否成功 连接地址
+http://127.0.0.1:8080/t-mvc-web/test/testIndex
+
+
+1.将数据源信息配置 到 persistence.xml 这个里面 经过测试可以成功，但是需要手动配置 实体映射类
+	如：<class>com.together.entity.User</class> ，否则数据表 不会自动创建，暂时不知道原因?
+	
+	
+2.

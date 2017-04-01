@@ -1,0 +1,184 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+   <!--  配置关联父项目信息-->      
+    <parent> 
+		<artifactId>parent</artifactId> 
+		<groupId>com.together</groupId> 
+		<version>1.0-SNAPSHOT</version> 
+	  </parent>
+  <artifactId>t-framework</artifactId>
+  <packaging>jar</packaging>
+
+  <name>t-framework</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <servelt-version>3.0.1</servelt-version>
+  	 <jsp-version>2.2</jsp-version>
+    <hibernate-jpa.version>1.0.1.Final</hibernate-jpa.version>
+    <hibernate.version>3.6.4.Final</hibernate.version>
+     <together.version>1.0-SNAPSHOT</together.version>
+     <org.operamasks-version>3.2-Release</org.operamasks-version>
+     <org.springframework-version>3.2.1.RELEASE</org.springframework-version>
+     <log4j-version>1.2.17</log4j-version>
+  </properties>
+
+
+  <dependencies>
+     <!--servlet 相关jar包配置-->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>${servelt-version}</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet.jsp</groupId>
+		<artifactId>jsp-api</artifactId>
+		<version>${jsp-version}</version>
+		<scope>provided</scope>
+	</dependency>
+  <!-- log4j -->
+  <dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>${log4j-version}</version>
+	</dependency>
+  
+   <!-- Spring 相关 jar 包 -->
+		<dependency>
+			<artifactId>spring-webmvc</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-orm</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-core</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-tx</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-aop</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-expression</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-context</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j 排除依赖包 -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<artifactId>spring-beans</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-jdbc</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>spring-web</artifactId>
+			<groupId>org.springframework</groupId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+  
+  	 <!-- aom 相关jar-->       
+     <dependency>
+		<groupId>org.operamasks</groupId>
+		<artifactId>operamasks-api</artifactId>
+		<version>${org.operamasks-version}</version>
+	</dependency>
+     <dependency>
+		<groupId>org.operamasks</groupId>
+		<artifactId>comp-core</artifactId>
+		<version>${org.operamasks-version}</version>
+	</dependency>
+     <dependency>
+		<groupId>org.operamasks</groupId>
+		<artifactId>operamasks-core</artifactId>
+		<version>${org.operamasks-version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.operamasks</groupId>
+		<artifactId>operamasks-extra-skins</artifactId>
+		<version>${org.operamasks-version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.operamasks</groupId>
+		<artifactId>operamasks-options</artifactId>
+		<version>${org.operamasks-version}</version>
+	</dependency>
+    <dependency>
+		<groupId>org.operamasks</groupId>
+		<artifactId>elite</artifactId>
+		<version>${org.operamasks-version}</version>
+	</dependency>
+    <dependency>
+		<groupId>org.operamasks</groupId>
+		<artifactId>elite-api</artifactId>
+		<version>${org.operamasks-version}</version>
+	</dependency>
+  	<!-- 工具包 -->
+  	 <dependency>
+      <groupId>com.together</groupId>
+      <artifactId>t-common</artifactId>
+      <version>${together.version}</version>
+    </dependency>
+     <!-- 将User实体增加到 当前子项目中，否则会出现循环依赖问题
+       <dependency>
+      <groupId>com.together</groupId>
+      <artifactId>t-jpa-h-entity</artifactId>
+      <version>${together.version}</version>
+    </dependency>-->
+    
+  	<!-- hibernate JPA -->
+  	<dependency>
+		<groupId>org.hibernate.javax.persistence</groupId>
+		<artifactId>hibernate-jpa-2.0-api</artifactId>
+		<version>${hibernate-jpa.version}</version>
+	</dependency>
+  
+    <!--手工安装的 hibernate包  <dependency> 
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>  
+	--> 
+     <dependency>        
+		<groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-entitymanager</artifactId>
+	  	<version>${hibernate.version}</version>
+	</dependency>
+	
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

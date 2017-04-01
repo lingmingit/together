@@ -1,0 +1,4 @@
+
+
+1.由于Jetty Server 该服务器不支持 将该JPA(persistence.xml)配置文件 放到 其它jar包中,把文件放到web工程下面
+2.tomcat 支持 

@@ -1,0 +1,75 @@
+body {
+	width: 99.5%; margin:0 auto; font-size:12px; color:#014588; background:#E9EEFC;
+}
+
+.serachFormOutDiv {
+	width: 99.5%; font-size:12px; color:#014588; background:#E9EEFC;
+}
+
+.widthPercent {
+	width:99%; margin:0px; color:#F00; height:0px; background:#E9EEFC;
+}
+
+.widthPercent li {
+	font-size: 11px; color: #FF0000; vertical-align:middle; white-space: nowrap; margin-left: 12px; line-height:160%;
+}
+
+.toolbar {
+	width:99.2%; text-align:right;
+}
+
+.f7toolbar {
+	width:99.2%; text-align:center;
+}
+
+.serachForm {
+	width: 800px; border:none;
+}
+
+.f7serachForm {
+	width: 500px; border:none;
+}
+
+.legend_label {
+	font-weight:bold;
+}
+
+.labelRight {
+	width:90px; text-align:right; padding-right:6px; white-space:nowrap;
+}
+
+.inputLeft {
+	text-align:left; padding-left:6px; white-space:nowrap; vertical-align: middle;
+}
+
+.input_lost_focus {
+	border-color: #E9EEFC #E9EEFC #B5B8C8 #E9EEFC;  background:none;
+}
+
+.input_get_focus {
+	border: 1px solid #7EADD9; background: #FFFFFF url(../images/text-bg.gif) repeat-x scroll 0 0;
+}
+
+.topButtonDiv {
+	width:750px; float:right;
+}
+
+.f7topButtonDiv {
+	width:100%; float:center;
+}
+
+.topButton {
+	float:right; text-align:center; margin-right:10px;
+}
+
+.f7topButton {
+	float:right; text-align:center; margin-right:5px;
+}
+
+.treeCondition {
+	width: 99.5%; background:#E9EEFC;
+}
+
+.treeCondition td {
+	font-size: 12px; color: #0063AB; vertical-align: middle; white-space: nowrap;
+}
